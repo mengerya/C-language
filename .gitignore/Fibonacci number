@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<Windows.h>
+//递归和非递归分别实现求第n个斐波那契数
+int fib_1(int n)
+{
+	//使用递归实现求第n个斐波那契数
+	if(n<=2)
+		return 1;
+	else
+		return fib_1(n-1)+fib_1(n-2);
+}
+
+int fib_2(int n)
+{
+	//非递归实现求第n个斐波那契数
+	int a = 1;
+	int b = 1;
+	int c = 0;
+	while(n>2)
+	{
+		c = a+b;
+		a = b;
+		b = c;
+		n--;
+	}
+	return c;
+}
+
+int main()
+{
+	int n = 0;
+	n = 10;
+	printf("%d\n",fib_1(n));
+	printf("%d\n",fib_2(n));
+	system("pause");
+	return 0;
+
+}
