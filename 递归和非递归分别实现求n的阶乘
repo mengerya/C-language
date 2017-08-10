@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<Windows.h>
+#include<string.h>
+#include<stdlib.h>
+
+
+int Factorial_r(int num)
+{
+	//非递归实现
+	int k = 1;
+    while(num > 0)
+        k *= num--;
+    return k;
+}
+
+int Factorial(int num)
+{
+	//递归实现
+	 return num > 0 ? num * Factorial(num-1) : 1;
+}
+
+int main()
+{
+	int n = 0;
+
+	printf("请输入一个数，求他的阶乘:\n");
+	scanf("%d",&n);
+	printf("%d\n",Factorial(n));
+	printf("%d\n",Factorial_r(n));
+	system("pause");
+	return 0;
+}
