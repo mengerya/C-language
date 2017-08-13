@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<math.h>
+
+#include<Windows.h>
+int is_year(int year)
+{
+	int num = 0;
+    return ((year%4==0&&year%100!=0)||year%400==0);
+		
+}
+int main()
+{
+	int year = 0;
+	int ret = 0;
+	
+	for(year=1000;year<2000;year++)
+	{
+		ret = is_year(year);
+	    if(ret)
+		    printf("这一年是闰年:%d\n",year);
+	}
+
+	system("pause");
+	return 0;
+}
