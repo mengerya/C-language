@@ -1,0 +1,52 @@
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<Windows.h>
+#include<string.h>
+#include<assert.h>
+
+int my_strlen_1(const char* str)
+{
+	//计数器实现
+	int count = 0;
+	assert(str);
+	while(*str)
+	{
+		count++;
+		str++;
+	}
+	return count;
+}
+
+int my_strlen_2(const char* str)
+{
+	//递归实现
+	assert(str);
+	if(*str != '\0')
+		return 1+my_strlen_2(str+1);
+	else
+		return 0;
+}
+
+int my_strlen_3(const char* str)
+{
+	//指针减指针模拟实现
+	const char *p = str;  
+    while(*p)  
+    {  
+        p++;  
+    }  
+    return p-str;
+}
+
+int main()
+{
+	int len1 = my_strlen_1("abcdef");
+	int len2 = my_strlen_2("abcdef");
+	int len3 = my_strlen_3("abcdef");
+	printf("len1 = %d\n",len1);
+	printf("len2 = %d\n",len2);
+	printf("len3 = %d\n",len3);
+	system("pause");
+	return 0;
+}
