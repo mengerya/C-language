@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<Windows.h>
+#include<string.h>
+#include<assert.h>
+
+char* my_strcpy(char* dest,const char* src)
+{
+	char *ret = dest;
+	assert(src != NULL);
+	assert(dest != NULL);
+	while(*dest++ = *src++)
+	{
+		;
+	}
+	return ret;
+}
+
+int main()
+{
+	char arr[80]={0};
+    printf("string=%s\n",my_strcpy(arr,"hello world"));
+	system("pause");
+	return 0;
+}
